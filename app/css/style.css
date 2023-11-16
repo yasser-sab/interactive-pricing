@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
+
+/*start global variables */
+
+:root {
+	/*start color variables*/
+
+--soft-cyan : hsl(174, 77%, 80%);	/*(Full Slider Bar)*/
+--strong-cyan : hsl(174, 86%, 45%);	/*(Slider Backround)*/
+--light-grayish-red : hsl(14, 92%, 95%);	/*(Discount Background)*/
+--light-red : hsl(15, 100%, 70%);	/*(Discount Text)*/
+--pale-blue : hsl(226, 100%, 87%);	/*(CTA Text)*/
+
+--white : hsl(0, 0%, 100%);	/*(Pricing Component Background)*/
+--very-pale-blue : hsl(230, 100%, 99%);	/*(Main Background)*/
+--light-grayish-blue : hsl(224, 65%, 95%);	/*(Empty Slider Bar)*/
+--light-grayish-blue2 : hsl(223, 50%, 87%);	/*(Toggle Background)*/
+--grayish-blue : hsl(225, 20%, 60%);/*(text)*/
+--dark-desaturated-blue : hsl(227, 35%, 25%);	/*(Text & CTA Background)*/
+
+	/*end color variables*/
+
+	/*start font variables*/
+
+	--ff: 'Manrope', sans-serif;
+
+	--fw-s:600;
+	--fw-l:800;
+	--fs: 15px;
+
+	/*end font variables*/
+
+
+
+}
+
+/*end global variables */
+
+
+
+/*start global settings*/
+
+html {
+	font-size: 100%;
+	box-sizing: border-box;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+	padding: 0;
+	margin:0;
+}
+
+body {
+	font-family: var(--ff);
+	font-size: 15px;
+	line-height: 1.2;
+	min-height: 100vh;
+	background:var(--very-pale-blue)  no-repeat ;
+	background-position:center 10%, center top;
+	background-size: auto, contain;
+	background-image:url("../../images/pattern-circles.svg"), url("../../images/bg-pattern.svg");
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+h1, h2 {
+	color: var(--dark-desaturated-blue);
+	font-weight: var(--fw-l);
+}
+
+h1 {
+	font-size: 1.67rem;
+	margin-bottom: 17px;
+	
+}
+
+h2 {
+	font-size: 1rem;
+	font-weight: var(--fw-l);
+}
+
+h3 {
+	font-size: 2.33rem;
+}
+
+label, p, h2 {
+	color: var(--grayish-blue)
+}
+
+label, p {
+	font-size: 13px;
+	font-weight: var(--fw-s);
+}
+
+p {
+	font-size: .8rem;
+	display: inline-block;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	list-style-image: url('../../images/icon-check.svg');
+	list-style-position: inside;
+}
+
+span {
+	background-color: var(--light-grayish-red);
+	color: var(--light-red);
+	border-radius: 50px;
+	padding:2.5px 5px;
+	display: block;
+}
+
+b {
+	letter-spacing: 3px;
+	font-size: 14px;
+	font-weight: var(--fw-l);
+}
+
+button {
+	border:none;
+	outline:none;
+	padding:15px 46px;
+	color: var(--pale-blue);
+	background-color: var(--dark-desaturated-blue);
+	font-size:14px;
+	font-weight: var(--fw-l);
+	border-radius: 50px;
+	cursor: pointer;
+}
+
+button:hover {
+	color: var(--white);
+}
+
+input {
+	display: block;
+}
+
+	input[type="checkbox"] {
+		cursor: pointer;
+		position: relative;
+		margin: 0;
+		width: 40px;
+		height: 20px;
+		appearance:none;
+		outline: none;
+		background-color: var(--light-grayish-blue2);
+		border-radius: 50px;
+		transition:.3s linear;
+	}
+
+	input[type="checkbox"]::before {
+		content: "";
+		position: absolute;
+		width: 50%;
+		height: 100%;
+		background-color: var(--white);
+		border-radius: 50%;
+		transform: scale(.7);
+		transition:.3s linear;
+		left: 0;
+		top: 0;
+	}
+
+	input[type="checkbox"]:checked {
+		background-color: var(--strong-cyan);
+	}
+
+	input[type="checkbox"]:checked::before {
+		left: 50%;
+		transform: scale(.7);
+	}
+
+/*end global settings*/
+
+
+
+/*start main style*/
+
+.pricing {
+	width: 540px;
+}
+
+.pricing-card {
+	background-color:var(--white);
+	
+	border-radius: 10px;
+	margin-top: 90px;
+}
+
+.pricing-card__top {
+	padding: 33px 46px;
+}
+
+.pricing-card__top p:onluy-child {
+	letter-spacing: 10px;
+}
+
+.pricing-card__bottom {
+	padding: 33px 43px;
+	border-top: 1px solid var(--light-grayish-blue)
+}
+
+.advantages__item:not(:last-child) {
+	/*margin-bottom: 20px;*/
+}
+
+
+@media (max-width:400px) {
+	.pricing-card__bottom {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	button {
+		margin-top: 66px;
+	}
+}
+
+/*end main style*/
+
+
+/*start helper classes*/
+
+.flex {
+	display: flex;
+}
+
+.fd {
+	flex-direction: column;
+}
+
+.jc-sb {
+	justify-content: space-between;
+}
+
+.jc-c {
+	justify-content: center;
+}
+
+.jc-fe {
+	justify-content: flex-end;
+}
+
+.ai-c {
+	align-items: center;
+}
+
+.g-s {
+	gap:17px;
+}
+
+.my-l {
+	margin-top:36px;
+	margin-bottom: 40px;
+}
+
+.mr-m {
+	margin-right: 17px;
+}
+
+.ta-c {
+	text-align: center;
+}
+
+.ta-l {
+	text-align: left;
+}
+
+.fw-w {
+	flex-wrap: wrap;
+}
+
+/*end helper classes*/
+
+
+
+
